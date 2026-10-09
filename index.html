@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,12 +34,38 @@ img,video{max-width:100%}
 header{position:fixed;top:0;left:0;width:100%;height:105px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 5%;background:linear-gradient(180deg,rgba(0,0,0,.96),rgba(0,0,0,.15));transition:background .3s,backdrop-filter .3s}
 header.scrolled{background:rgba(5,5,5,.97);backdrop-filter:blur(12px)}
 
-/* LOGO + STUDIO TEXT */
-.brand-logo{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-shrink:0;min-width:0;color:#fff}
-.brand-logo img{display:block;width:95px;height:78px;object-fit:contain;object-position:center;margin:0;padding:0;flex-shrink:0}
-.brand-text{display:flex;flex-direction:column;justify-content:center;gap:5px;min-width:0}
+/* LOGO AND TAGLINE */
+.brand-logo{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  flex-shrink:0;
+}
+
+.brand-logo img{
+  width:195px;
+  height:62px;
+  object-fit:contain;
+  object-position:center;
+}
+
+.brand-tagline{
+  display:block;
+  width:auto;
+  text-align:left;
+  font-family:Montserrat,sans-serif;
+  font-size:7px;
+  letter-spacing:1.5px;
+  line-height:1.8;
+  color:var(--gold);
+  white-space:normal;
+  max-width:100px;
+  margin:0;
+  transform:none;
+}.brand-text{display:none}
 .brand-title{font-family:"Cormorant Garamond",serif;font-size:24px;letter-spacing:3px;line-height:1;color:#fff;white-space:nowrap}
-.brand-tagline{font-size:8px;letter-spacing:2px;line-height:1.7;color:var(--gold);white-space:nowrap}
 
 .nav{display:flex;align-items:center;gap:25px}
 .nav a{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#ddd;transition:color .3s;white-space:nowrap}
@@ -160,10 +185,8 @@ footer{padding:70px 7% 28px;background:#070707;border-top:1px solid #222}
 /* TABLET */
 @media(max-width:1100px){
 header{gap:12px}
-.brand-logo{gap:8px}
-.brand-logo img{width:75px;height:70px}
-.brand-title{font-size:21px;letter-spacing:2px}
-.brand-tagline{font-size:7px;letter-spacing:1.5px}
+.brand-logo img{width:170px;height:58px}
+.brand-tagline{width:170px;font-size:6px;letter-spacing:1.8px;transform:translateX(-10px)}
 .nav{gap:13px}
 .nav a{font-size:9px;letter-spacing:1px}
 .header-icons{gap:13px}
@@ -174,10 +197,8 @@ header{gap:12px}
 /* MOBILE NAVIGATION */
 @media(max-width:850px){
 header{height:88px;padding:0 4%}
-.brand-logo{gap:8px}
-.brand-logo img{width:66px;height:64px}
-.brand-title{font-size:20px;letter-spacing:2px}
-.brand-tagline{font-size:6.5px;letter-spacing:1.35px}
+.brand-logo img{width:155px;height:52px}
+.brand-tagline{width:155px;font-size:5.5px;letter-spacing:1.5px;margin-top:-2px;transform:translateX(-9px)}
 .nav{display:none}
 .menu-btn{display:block}
 .header-icons>a:first-child{display:none}
@@ -202,10 +223,8 @@ header{height:88px;padding:0 4%}
 /* SMALL MOBILE */
 @media(max-width:500px){
 header{height:78px;padding:0 3%}
-.brand-logo{gap:5px}
-.brand-logo img{width:48px;height:52px}
-.brand-title{font-size:17px;letter-spacing:1.5px}
-.brand-tagline{font-size:5.5px;letter-spacing:1px}
+.brand-logo img{width:145px;height:48px}
+.brand-tagline{width:145px;font-size:5px;letter-spacing:1.3px;margin-top:-2px;transform:translateX(-8px)}
 .header-icons{gap:10px;font-size:15px}
 .menu-btn{font-size:20px;padding:5px}
 .hero{min-height:620px}
@@ -247,9 +266,8 @@ header{height:78px;padding:0 3%}
 }
 
 @media(max-width:360px){
-.brand-logo img{width:40px;height:46px}
-.brand-title{font-size:15px;letter-spacing:1px}
-.brand-tagline{font-size:5px;letter-spacing:.7px}
+.brand-logo img{width:125px;height:44px}
+.brand-tagline{width:125px;font-size:4.5px;letter-spacing:1px;transform:translateX(-7px)}
 .header-icons{gap:8px}
 }
 
@@ -260,7 +278,6 @@ header{height:78px;padding:0 3%}
 </head>
 
 <body>
-
 <div class="loader" id="loader">
 <div class="loader-logo">M:SEVEN</div>
 <div class="loader-line"></div>
@@ -285,10 +302,7 @@ header{height:78px;padding:0 3%}
 <header id="header">
 <a href="#home" class="brand-logo" aria-label="M:SEVEN — The Fashion Designing Studio">
 <img src="logo.png" alt="M:SEVEN logo">
-<span class="brand-text">
-<span class="brand-title">M:SEVEN</span>
-<span class="brand-tagline">THE FASHION<br>DESIGNING STUDIO</span>
-</span>
+<span class="brand-tagline">THE FASHION DESIGNING STUDIO</span>
 </a>
 
 <nav class="nav" aria-label="Main navigation">
@@ -308,7 +322,6 @@ header{height:78px;padding:0 3%}
 </header>
 
 <div class="menu-overlay" id="menuOverlay"></div>
-
 <nav class="side-menu" id="sideMenu" aria-label="Mobile navigation" aria-hidden="true">
 <button class="close" id="closeMenu" aria-label="Close navigation menu">&times;</button>
 <a href="#home">HOME</a>
@@ -323,12 +336,14 @@ header{height:78px;padding:0 3%}
 <source src="https://videos.pexels.com/video-files/27239911/12100735_1920_1080_50fps.mp4" type="video/mp4">
 </video>
 <button class="mute-btn" id="heroMute" aria-label="Turn hero video sound on">🔇</button>
+
 <div class="hero-content">
 <div class="hero-small" id="heroSmall">ETHNIC • COUTURE • DESIGN</div>
 <h1 id="heroTitle">Timeless<br>Elegance.</h1>
 <p id="heroText">CRAFTED FOR THE WOMAN WHO DEFINES HER OWN STYLE</p>
 <a href="#collections" class="explore">EXPLORE COLLECTION <span>→</span></a>
 </div>
+
 <div class="hero-dots" aria-label="Choose hero slide">
 <button class="active" aria-label="Slide 1" aria-pressed="true"></button>
 <button aria-label="Slide 2" aria-pressed="false"></button>
@@ -609,11 +624,7 @@ menuOverlay.classList.remove("show");
 document.body.classList.remove("menu-open");
 sideMenu.setAttribute("aria-hidden","true");
 menuBtn.setAttribute("aria-expanded","false");
-
-if(previousFocus&&previousFocus.focus){
-previousFocus.focus();
-}
-
+menuBtn.focus();
 restartSlideTimer();
 }
 
@@ -731,6 +742,5 @@ restartSlideTimer();
 }
 });
 </script>
-
 </body>
 </html>
